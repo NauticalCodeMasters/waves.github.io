@@ -329,7 +329,7 @@ for stn in buoys:
     # Determine the sea state based on the length adjusted PM SWH
     # Sea state SWH limits are based off of the MCTP SUROB table for ACV
     def pm_sea_state_from_swh(length_adjusted_height):
-        sea_state_limits_swh_ft = [0, 0.299, 0.99, 3.99, 7.99, 13.00]
+        sea_state_limits_swh_ft = [0.5, 1.499, 3.499, 5.99, 7.99, 12.00]
 
         sea_state_swh = 0
         for i, limit in enumerate(sea_state_limits_swh_ft):
@@ -413,7 +413,7 @@ for stn in buoys:
             transform=plt.gca().transAxes,
             color='orange', fontsize=10)
 
-    plt.text(0.75, 0.01, f'Buoy Sea state: {sea_state} / ',
+    plt.text(0.75, 0.01, f'Buoy Sea state (NATO): {sea_state} / ',
             verticalalignment='bottom', horizontalalignment='right',
             transform=plt.gca().transAxes,
             color='black', fontsize=10)
